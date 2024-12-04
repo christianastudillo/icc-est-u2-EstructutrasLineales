@@ -39,4 +39,21 @@ public class Stack {
     }
 
 
+    public void printStack(){
+        Node current = top;
+        while(current!=null){
+            System.out.print(current.getValue());
+            current = current.getNext();
+        }
+    }
+
+    public int getSize(){
+        int size = 0;
+        Node current = top;
+        while(current!=null){
+            size++;
+            current = current.getNext();
+        }
+        return size;
+    }
 }
