@@ -63,11 +63,7 @@ public class Queue {
         }
     }
 
-    //replicar queue en queueGeneric y realizar una implementacion runQueueGeneric()
     
-
-    
-
     public boolean isEmpty() {
         return front == null;
     }

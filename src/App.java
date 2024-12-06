@@ -1,4 +1,5 @@
 import materia.Queues.Queue;
+import materia.Queues.QueueGeneric;
 import materia.Stacks.Stack;
 import materia.Stacks.StackGeneric;
 import models.Pantalla;
@@ -8,7 +9,8 @@ public class App {
         //System.out.println("Hello, World!");
         //runStack();  
         //runStackGeneric(); 
-        runQueue();         
+        runQueue(); 
+        runQueueGeneric();        
     }
     public static void runStack() {
         Stack stack = new Stack();
@@ -55,5 +57,18 @@ public class App {
         System.out.println(cola.dequeue());
         System.out.println(cola.peek());
     }
+    public static void runQueueGeneric() {
+        QueueGeneric<Integer> queue = new QueueGeneric<>();
+    
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
+    
+        System.out.println(queue.peek()); 
+        System.out.println(queue.dequeue()); 
+        System.out.println(queue.size());
+    }
+    
 
 }
