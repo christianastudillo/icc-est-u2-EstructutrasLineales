@@ -1,6 +1,6 @@
 package materia.models;
 
-public class Node {
+public class Node<T> {
     private int value;
     private Node next;
     
@@ -24,8 +24,6 @@ public class Node {
     public String toString() {
         return "Node [value: " + value + "]";
     }
-
-    
 
     
 }

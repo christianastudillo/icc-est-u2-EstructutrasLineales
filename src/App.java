@@ -1,3 +1,4 @@
+import controller.MenuController;
 import materia.Queues.Queue;
 import materia.Queues.QueueGeneric;
 import materia.Stacks.Stack;
@@ -9,8 +10,9 @@ public class App {
         //System.out.println("Hello, World!");
         //runStack();  
         //runStackGeneric(); 
-        runQueue(); 
-        runQueueGeneric();        
+        //runQueue(); 
+        //runQueueGeneric(); 
+        runContactManager();       
     }
     public static void runStack() {
         Stack stack = new Stack();
@@ -70,5 +72,10 @@ public class App {
         System.out.println(queue.size());
     }
     
+    
+    private static void runContactManager() {   
+        MenuController menuController = new MenuController();
+        menuController.showMenu();
+    }
 
 }
