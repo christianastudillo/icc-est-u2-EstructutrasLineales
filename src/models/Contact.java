@@ -27,6 +27,6 @@ public class Contact<T, U> {
 
     @Override
     public String toString() {
-        return "Contact{name=" + name + ", phone=" + phone + "}";
+        return "Contact name: " + name + ", phone:" + phone;
     }
 }

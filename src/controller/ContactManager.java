@@ -18,7 +18,7 @@ public class ContactManager {
     public Contact<?, ?> findContactByName(String name) {
         NodeGeneric<Contact<?, ?>> current = contacts.getHead();
         while (current != null) {
-            if (current.getValue().getName().equals(name)) {
+            if (((String) current.getValue().getName()).equalsIgnoreCase(name)) {
                 return current.getValue();
             }
             current = current.getNext();
@@ -27,7 +27,23 @@ public class ContactManager {
     }
 
     public void deleteContactByName(String name) {
-        //contacts.deleteByValue(findContactByName(name));
+        NodeGeneric<Contact<?, ?>> current = contacts.getHead();
+        if(current == null)
+            return;
+        if (((String) current.getValue().getName()).equalsIgnoreCase(name)) {
+            contacts.setHead(current.getNext());
+            contacts.setSize(contacts.getSize() - 1);
+            return;
+        }
+        while (current.getNext() != null) {
+            if (((String) current.getNext().getValue().getName()).equalsIgnoreCase(name)) {
+                current.setNext(current.getNext().getNext());
+                contacts.setSize(contacts.getSize() - 1);
+                return;
+            }
+            current = current.getNext();
+        }
+
     }
 
     public void printList() {

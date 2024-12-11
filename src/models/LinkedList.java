@@ -13,8 +13,8 @@ public class LinkedList<T> {
     }
 
     public void appendToTail(T value) {
+        if (head == null) {
             head = new NodeGeneric<>(value);
-            if (head == null) {
         } else {
             NodeGeneric<T> current = head;
             while (current.getNext() != null) {
@@ -24,6 +24,7 @@ public class LinkedList<T> {
         }
         size++;
     }
+    
 
     public T findByValue(T value) {
         NodeGeneric<T> current = head;
@@ -34,27 +35,7 @@ public class LinkedList<T> {
             current = current.getNext();
         }
         return null;  
-    }
-
-    public void deleteByValue(T value) {
-        // if (head == null) return;
-
-        // if (head.getValue().equals(value)) {
-        //     head = head.getNext();
-        //     size--;
-        //     return;
-        // }
-
-        // NodeGeneric<T> current = head;
-        // while (current.getNext() != null) {
-        //     if (current.getNext().getValue().equals(value)) {
-        //         current.setNext(current.getNext().getNext());
-        //         size--;
-        //         return;
-        //     }
-        //     current = current.getNext();
-        // }
-    }
+    } 
 
     public void print() {
         if(head == null){
@@ -63,7 +44,7 @@ public class LinkedList<T> {
         }
         NodeGeneric<T> current = head;
         while (current != null) {
-            System.out.println(current.getValue()+"-->");
+            System.out.println(current.getValue()+" ");
             current = current.getNext();
         }
     }

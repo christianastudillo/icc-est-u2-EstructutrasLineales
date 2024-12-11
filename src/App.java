@@ -13,6 +13,8 @@ public class App {
         //runQueue(); 
         //runQueueGeneric(); 
         runContactManager();       
+                    
+
     }
     public static void runStack() {
         Stack stack = new Stack();
