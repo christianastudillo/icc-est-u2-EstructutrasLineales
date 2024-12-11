@@ -1,6 +1,6 @@
 package materia.models;
 
-public class NodeGeneric<T> { // Corrigido: Adicionado <T> na definição da classe
+public class NodeGeneric<T> { 
     private T value;
     private NodeGeneric<T> next;
 

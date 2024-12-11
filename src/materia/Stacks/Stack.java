@@ -6,9 +6,8 @@ import materia.models.Node;
 
 public class Stack {
     
-    private Node top;//nodo en la cima de nustra pila
+    private Node top;
 
-    //creamos la pila con la cima nulla o vacia 
     public Stack(){
         this.top = null;
     }

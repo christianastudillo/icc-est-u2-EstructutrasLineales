@@ -12,7 +12,6 @@ public class StackGeneric<T> {
         this.size = 0;
     }
 
-    // Método para agregar um elemento à pilha
     public void push(T value) {
         NodeGeneric<T> newNode = new NodeGeneric<>(value);
         newNode.setNext(top);
@@ -20,7 +19,6 @@ public class StackGeneric<T> {
         size++;
     }
 
-    // Método para retirar um elemento da pilha
     public T pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
@@ -65,7 +63,11 @@ public class StackGeneric<T> {
         size--;                          
         return currentTop;              
     }
+
+    @Override
+    public String toString() {
+        return "StackGeneric [top=" + top + ", size=" + size + "]";
+    }
     
-
-
+    
 }

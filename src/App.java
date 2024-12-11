@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import Ejercicio_01_sign.SingValidator;
+import Ejercicio_02_sorting.StackSorter;
 import controller.MenuController;
 import materia.Queues.Queue;
 import materia.Queues.QueueGeneric;
@@ -12,9 +15,10 @@ public class App {
         //runStackGeneric(); 
         //runQueue(); 
         //runQueueGeneric(); 
-        runContactManager();       
-        //fin
-
+        //runContactManager();
+        //runSingValidator();       
+        runStackSorter();
+    
     }
     public static void runStack() {
         Stack stack = new Stack();
@@ -73,11 +77,34 @@ public class App {
         System.out.println(queue.dequeue()); 
         System.out.println(queue.size());
     }
-    
-    
     private static void runContactManager() {   
         MenuController menuController = new MenuController();
         menuController.showMenu();
     }
-
+    private static void runSingValidator() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese una cadena de signos: ");
+        String input = scanner.nextLine();
+        System.out.println("El resultado de la validación es: " + SingValidator.esValido(input));
+    }
+    private static void runStackSorter() {
+        Scanner scanner = new Scanner(System.in);
+        StackGeneric<Integer> stack = new StackGeneric<>();
+        System.out.println("Ingrese números para el stack (escriba 'fin' para terminar):");
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("fin")) {
+                break;
+            }
+            try {
+                stack.push(Integer.parseInt(input));
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingrese un número válido.");
+            }
+        }
+        System.out.println("Stack original: " + stack);
+        ordenar(stack);
+        System.out.println("Stack ordenado: " + stack);
+        scanner.close();
+    }   
 }
