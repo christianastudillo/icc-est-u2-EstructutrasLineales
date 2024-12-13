@@ -11,7 +11,7 @@ public class SingValidator {
             } else {
                 if (stack.isEmpty()) {
                     return false;
-                }
+                }   
                 char top = stack.pop();
                 if ((c == ')' && top != '(') || 
                     (c == ']' && top != '[') || 
