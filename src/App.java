@@ -91,6 +91,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         StackGeneric<Integer> stack = new StackGeneric<>();
         System.out.println("Ingrese números para el stack (escriba 'fin' para terminar):");
+        
         while (true) {
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("fin")) {
@@ -102,9 +103,10 @@ public class App {
                 System.out.println("Por favor, ingrese un número válido.");
             }
         }
+        
         System.out.println("Stack original: " + stack);
-        ordenar(stack);
+        StackSorter.ordenar(stack); 
         System.out.println("Stack ordenado: " + stack);
         scanner.close();
-    }   
+    }
 }

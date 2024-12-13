@@ -66,7 +66,14 @@ public class StackGeneric<T> {
 
     @Override
     public String toString() {
-        return "StackGeneric [top=" + top + ", size=" + size + "]";
+        StringBuilder sb = new StringBuilder();
+        NodeGeneric<T> current = top;
+        while (current != null) {
+            sb.append(current.getValue()).append(" -> ");
+            current = current.getNext();
+        }
+        sb.append("null");
+        return sb.toString();
     }
     
     
