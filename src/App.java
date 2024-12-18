@@ -16,7 +16,7 @@ public class App {
         //runQueue(); 
         //runQueueGeneric(); 
         //runContactManager();
-        //runSingValidator();       
+        runSingValidator();       
         runStackSorter();
     
     }
